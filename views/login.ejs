@@ -1,0 +1,48 @@
+<%- include('includes/pageTop.ejs') %>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br>
+      <h3 class="text-center text-white mb-3">Welcome to the Universe <br> An Online Gallery of NASA Images</h3>
+      <br>
+      <div class="card bg-light mb-3">
+        <div class="card-body">
+          <form class="needs-validation" id="loginForm" action="/home" method="post">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email"
+                     placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+                     placeholder="Enter your password" required>
+            </div>
+            <div class="fw-bold text-success text-center mb-3 <%= registerSuccess ? "" : "d-none" %>" >
+                 User created successfully
+            </div>
+            <div class="fw-bold text-danger text-center mb-3 <%= loginFailed ? "" : "d-none" %>" >
+                Email or password wrong
+            </div>
+            <div class="fw-bold text-success text-center mb-3 <%= logOut ? "" : "d-none" %>" >
+              Hope to see you soon :)
+            </div>
+            <div class="text-center mb-2">
+              <button type="submit" class="btn btn-info w-50">Login</button>
+            </div>
+          </form>
+
+          <div class="text-center">
+            <form action="/register" method="get">
+              <button type="submit" class="btn btn-link w-50">need to register?</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('includes/pageBottom.ejs') %>
